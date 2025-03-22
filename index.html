@@ -9,12 +9,31 @@
     <form onsubmit="handleSubmit(event)">
       <div>
         <input type="text" name="name" placeholder="Enter your first name" />
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter your password"
+        />
       </div>
       <div>
         <input type="submit" value="Submit" />
       </div>
     </form>
   </body>
-  
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault(); // Prevent form from submitting
 
-</html>
+      const formData = new FormData(e.target);
+      const data = {};
+
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      console.log(data); // Log form data
+
+      // Here, you can send `data` to a server, or perform other actions
+    }
+  </script>
+</
